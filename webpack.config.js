@@ -23,6 +23,16 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.(svg|png|jpg|jpeg|gif)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[hash].[ext]',
+            outputPath: 'images/',
+          }
+        }
+      }      
     ]
   },
   resolve: {
